@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './marker.jsx';
+import GOOGLE_API_KEY from '../../.env'
 
 const anyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -15,7 +16,7 @@ class Gmap extends Component {
 
 
   render() {
-  const myKey = 'AIzaSyDwwhj6vzUsmr3Ex_zLVz8ka-jMO86zabA';
+  const myKey = GOOGLE_API_KEY;
     return(
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
