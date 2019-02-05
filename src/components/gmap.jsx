@@ -22,12 +22,11 @@ class Gmap extends Component {
           bootstrapURLKeys={{ key: myKey }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom} >
-          { this.props.selectedFlats.map(flat =>
-            <Marker
-            lat={flat.lat}
-            lng={flat.lng}
-            text={'A'}
-          />)}
+          <Marker
+          lat={this.props.selectedFlat.lat}
+          lng={this.props.selectedFlat.lng}
+          text={'A'}
+          />
         </GoogleMapReact>
       </div>
     )

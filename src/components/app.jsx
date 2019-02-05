@@ -2,29 +2,29 @@ import React, { Component } from 'react';
 
 import FlatList from './flat_list.jsx';
 import Gmap from './gmap.jsx';
-import Flats from '../../data/flats.js';
+import flats from '../../data/flats.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      flats: Flats,
-      selectedFlats: Flats
+      flats,
+      selectedFlat: flats[0]
     };
 
   }
 
-  selectFlat = (flat) => {
-    console.log(flat.props);
+  selectFlat = (index) => {
+    this.setState({ selectedFlat: flats[index] });
   }
 
   render() {
     return(
       <div>
-        <FlatList flats={this.state.flats} selectFlat={this.selectFlat} />
+        <FlatList flats={this.state.flats} selectFlat={this.selectFlat} selectedFlat={this.state.selectedFlat} />
         <div className="map-container">
-          <Gmap selectedFlats={this.state.selectedFlats} />
+          <Gmap selectedFlat={this.state.selectedFlat} />
         </div>
       </div>
     )
